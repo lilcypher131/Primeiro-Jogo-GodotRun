@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bdijx2ftavvb3"]
+
+[ext_resource type="Texture2D" uid="uid://cxt4ottyv6e4a" path="res://Sprites/inimigos.png" id="1_m7ba2"]
+[ext_resource type="Script" uid="uid://y65ft1hcewmo" path="res://Scripts/enemy_ground.gd" id="1_socnh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_socnh"]
+atlas = ExtResource("1_m7ba2")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggs3j"]
+atlas = ExtResource("1_m7ba2")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yhgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_socnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggs3j")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lthbn"]
+size = Vector2(13, 13)
+
+[node name="EnemyGround" type="Area2D" unique_id=288977048 groups=["dangerous"]]
+script = ExtResource("1_socnh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=80169424]
+sprite_frames = SubResource("SpriteFrames_8yhgy")
+animation = &"Run"
+autoplay = "Run"
+frame = 1
+frame_progress = 0.097423896
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=436156053]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_lthbn")

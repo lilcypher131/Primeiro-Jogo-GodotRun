@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ce201rphouavf"]
+
+[ext_resource type="Script" uid="uid://cq0j8ybd2t8ie" path="res://Scripts/game_over_layer.gd" id="1_4mwaf"]
+[ext_resource type="FontFile" uid="uid://b72wlbgehqc1l" path="res://Fonts/PressStart2P-Regular.ttf" id="1_o67e6"]
+[ext_resource type="Texture2D" uid="uid://grhng8ms7sdc" path="res://Sprites/restart_icon.png" id="2_4mwaf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p1hii"]
+font = ExtResource("1_o67e6")
+
+[sub_resource type="LabelSettings" id="LabelSettings_i71xq"]
+font = ExtResource("1_o67e6")
+font_size = 8
+
+[node name="GameOverLayer" type="CanvasLayer" unique_id=764843399]
+process_mode = 2
+script = ExtResource("1_4mwaf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=248642525]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7058824)
+
+[node name="LabelTitle" type="Label" parent="." unique_id=7323409]
+offset_left = 79.0
+offset_top = 57.0
+offset_right = 223.0
+offset_bottom = 80.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_p1hii")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelScore" type="Label" parent="." unique_id=1157956124]
+offset_left = 79.0
+offset_top = 115.0
+offset_right = 135.0
+offset_bottom = 123.0
+text = "Score: "
+label_settings = SubResource("LabelSettings_i71xq")
+
+[node name="LabelRecorde" type="Label" parent="." unique_id=1015090467]
+offset_left = 79.0
+offset_top = 129.0
+offset_right = 143.0
+offset_bottom = 137.0
+text = "Recorde:"
+label_settings = SubResource("LabelSettings_i71xq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=549088860]
+position = Vector2(151, 92)
+texture = ExtResource("2_4mwaf")

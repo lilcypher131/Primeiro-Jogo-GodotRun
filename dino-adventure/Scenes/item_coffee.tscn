@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dtqlqcsi4e54o"]
+
+[ext_resource type="Script" uid="uid://b7b17tljtbpxi" path="res://Scripts/item_coffee.gd" id="1_mvoiu"]
+[ext_resource type="Texture2D" uid="uid://ckoyndt1dmw6l" path="res://Sprites/coletavel.png" id="1_qleji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvoiu"]
+atlas = ExtResource("1_qleji")
+region = Rect2(0, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68y2c"]
+atlas = ExtResource("1_qleji")
+region = Rect2(17, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lb4e"]
+atlas = ExtResource("1_qleji")
+region = Rect2(34, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwgih"]
+atlas = ExtResource("1_qleji")
+region = Rect2(51, 0, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3jlq"]
+atlas = ExtResource("1_qleji")
+region = Rect2(68, 0, 17, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4prqf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvoiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68y2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lb4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwgih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3jlq")
+}],
+"loop": true,
+"name": &"Spinning",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1i5n"]
+size = Vector2(16, 9)
+
+[node name="ItemCoffee" type="Area2D" unique_id=1265706039 groups=["colectable"]]
+script = ExtResource("1_mvoiu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=567542942]
+sprite_frames = SubResource("SpriteFrames_4prqf")
+animation = &"Spinning"
+autoplay = "Spinning"
+frame = 3
+frame_progress = 0.26138896
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1202868352]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_x1i5n")
